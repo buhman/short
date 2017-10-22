@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    working_directory: /short
+    docker:
+      - image: elixir:1.5-alpine
+      - image: postgres:10-alpine
+    steps:
+      - checkout
+      # common
+      - run: mix local.hex --force
+      - run: mix local.rebar --force
+      # deps
+      - run: mix deps.get
+      - run: mix deps.compile
+      # tests
+      - run: mix test
