@@ -1,3 +1,5 @@
+[![circleci](https://img.shields.io/circleci/project/github/buhman/short.svg?style=flat-square)](https://circleci.com/gh/buhman/short)
+
 # Short
 
 To start your Phoenix server:
