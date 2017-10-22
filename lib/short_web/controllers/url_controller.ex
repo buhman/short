@@ -1,8 +1,8 @@
 defmodule ShortWeb.UrlController do
   use ShortWeb, :controller
 
-  alias Short.Short
   alias Short.Short.Url
+  alias Short.Short
 
   action_fallback ShortWeb.FallbackController
 

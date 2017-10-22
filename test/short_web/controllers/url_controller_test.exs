@@ -1,8 +1,8 @@
 defmodule ShortWeb.UrlControllerTest do
   use ShortWeb.ConnCase
 
-  alias Short.Short
   alias Short.Short.Url
+  alias Short.Short
 
   @create_attrs %{href: "some href"}
   @update_attrs %{href: "some updated href"}

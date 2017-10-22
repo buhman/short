@@ -7,5 +7,7 @@ defmodule ShortWeb.Router do
 
   scope "/api", ShortWeb do
     pipe_through :api
+
+    resources "/urls", UrlController, except: [:new, :edit]
   end
 end

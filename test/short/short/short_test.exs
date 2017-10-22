@@ -1,10 +1,9 @@
 defmodule Short.ShortTest do
   use Short.DataCase
 
-  alias Short.Short
-
   describe "urls" do
     alias Short.Short.Url
+    alias Short.Short
 
     @valid_attrs %{href: "some href"}
     @update_attrs %{href: "some updated href"}
