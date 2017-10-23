@@ -36,6 +36,8 @@ defmodule ShortWeb.Endpoint do
     key: "_short_key",
     signing_salt: "bjwAAlMu"
 
+  plug Corsica, origins: "*", allow_headers: ["content-type", "accept"], log: []
+
   plug ShortWeb.Router
 
   @doc """
