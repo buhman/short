@@ -2,30 +2,34 @@ import fetch from 'isomorphic-fetch'
 
 // raw state changes
 
-export const request = () => {
+export const request = (id) => {
   return {
-    type: 'REQUEST'
+    type: 'REQUEST',
+    fetch: id
   }
 }
 
 export const responseShort = (short) => {
   return {
     type: 'RESPONSE_SHORT',
-    item: short
+    item: short,
+    fetch: '__ADD__'
   }
 }
 
 export const responseShorts = (shorts) => {
   return {
     type: 'RESPONSE_SHORTS',
-    items: shorts
+    items: shorts,
+    fetch: '__LIST__'
   }
 }
 
 export const deletedShort = (id) => {
   return {
     type: 'DELETED_SHORT',
-    id: id
+    id: id,
+    fetch: id
   }
 }
 
@@ -33,7 +37,7 @@ export const deletedShort = (id) => {
 
 export const addShort = (href) => {
   return dispatch => {
-    dispatch(request())
+    dispatch(request('__ADD__'))
     return fetch(`http://localhost:4000/api/urls`, {
       method: 'post',
       headers: {
@@ -50,7 +54,7 @@ export const addShort = (href) => {
 
 export const listShorts = () => {
   return dispatch => {
-    dispatch(request())
+    dispatch(request('__LIST__'))
     return fetch(`http://localhost:4000/api/urls`)
       .then(response => response.json())
       .then(json => dispatch(
@@ -61,7 +65,7 @@ export const listShorts = () => {
 
 export const deleteShort = (id) => {
   return dispatch => {
-    dispatch(request())
+    dispatch(request(id))
     return fetch(`http://localhost:4000/api/urls/${id}`, {
       method: 'delete'
     })

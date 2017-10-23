@@ -38,7 +38,7 @@ defmodule ShortWeb.Endpoint do
 
   plug Corsica, origins: "*", allow_headers: ["content-type", "accept"], log: []
 
-  plug :slow
+  #plug :slow
   plug ShortWeb.Router
 
   defp slow(conn, _params) do

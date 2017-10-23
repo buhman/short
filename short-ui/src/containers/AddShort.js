@@ -26,7 +26,7 @@ let AddShort = ({ isFetching, dispatch }) => {
 
 const mapStateToProps = state => {
   return {
-    isFetching: state.short.isFetching
+    isFetching: state.short.fetching['__ADD__']
   }
 }
 
