@@ -22,6 +22,13 @@ export const responseShorts = (shorts) => {
   }
 }
 
+export const deletedShort = (id) => {
+  return {
+    type: 'DELETED_SHORT',
+    id: id
+  }
+}
+
 // api actions
 
 export const addShort = (href) => {
@@ -48,6 +55,18 @@ export const listShorts = () => {
       .then(response => response.json())
       .then(json => dispatch(
         responseShorts(json['data'])
+      ))
+  }
+}
+
+export const deleteShort = (id) => {
+  return dispatch => {
+    dispatch(request())
+    return fetch(`http://localhost:4000/api/urls/${id}`, {
+      method: 'delete'
+    })
+      .then(() => dispatch(
+        deletedShort(id)
       ))
   }
 }

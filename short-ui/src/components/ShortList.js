@@ -7,6 +7,7 @@ const ShortList = ({ shorts }) => (
       <tr>
         <td><strong>id</strong></td>
         <td><strong>href</strong></td>
+        <td><strong>actions</strong></td>
       </tr>
     </thead>
     <tbody>

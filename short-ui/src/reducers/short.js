@@ -22,6 +22,13 @@ const short = (state = {
           ...action.items
         ]
       })
+    case 'DELETED_SHORT':
+      return Object.assign({}, state, {
+        isFetching: false,
+        items: state.items.filter(item =>
+          item.id !== action.id
+        )
+      })
     default:
       return state
   }
