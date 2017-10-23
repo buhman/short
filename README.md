@@ -2,21 +2,14 @@
 
 # Short
 
-To start your Phoenix server:
+Experiments with web frontend libraries/frameworks/patterns/languages/etc…
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+The master branch is the API/service that these frontends can talk to, written in elixir.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+## react-redux
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+https://github.com/buhman/short/tree/react-redux
 
-## Learn more
+## elm
 
-  * Official website: http://www.phoenixframework.org/
-  * Guides: http://phoenixframework.org/docs/overview
-  * Docs: https://hexdocs.pm/phoenix
-  * Mailing list: http://groups.google.com/group/phoenix-talk
-  * Source: https://github.com/phoenixframework/phoenix
+Do this next
