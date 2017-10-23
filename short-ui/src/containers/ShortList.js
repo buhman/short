@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 const mapStateToProps = state => {
   return {
-    shorts: state.short
+    shorts: state.short.items
   }
 }
 

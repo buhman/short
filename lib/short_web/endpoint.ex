@@ -38,7 +38,14 @@ defmodule ShortWeb.Endpoint do
 
   plug Corsica, origins: "*", allow_headers: ["content-type", "accept"], log: []
 
+  plug :slow
   plug ShortWeb.Router
+
+  defp slow(conn, _params) do
+    :timer.sleep(500)
+    conn
+  end
+
 
   @doc """
   Callback invoked for dynamically configuring the endpoint.

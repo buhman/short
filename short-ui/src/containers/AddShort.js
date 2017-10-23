@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { addShort } from '../actions'
 
-let AddShort = ({ dispatch }) => {
+let AddShort = ({ isFetching, dispatch }) => {
   let input
 
   return (
@@ -17,13 +17,21 @@ let AddShort = ({ dispatch }) => {
       <input ref={node => {
         input = node
       }} />
-      <button type="submit">
+      <button type="submit" disabled={isFetching}>
         Add Short
       </button>
     </form>
   )
 }
 
-AddShort = connect()(AddShort)
+const mapStateToProps = state => {
+  return {
+    isFetching: state.short.isFetching
+  }
+}
+
+AddShort = connect(
+  mapStateToProps
+)(AddShort)
 
 export default AddShort

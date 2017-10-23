@@ -1,12 +1,27 @@
-const short = (state = [], action) => {
+const short = (state = {
+  isFetching: false,
+  items: []
+}, action) => {
   switch (action.type) {
-    case 'RECIEVE_SHORT':
-      return [
-        ...state,
-        action.short
-      ]
-    case 'RECIEVE_SHORTS':
-      return action.shorts
+    case 'REQUEST':
+      return Object.assign({}, state, {
+        isFetching: true
+      })
+    case 'RESPONSE_SHORT':
+      return Object.assign({}, state, {
+        isFetching: false,
+        items: [
+          ...state.items,
+          action.item
+        ]
+      })
+    case 'RESPONSE_SHORTS':
+      return Object.assign({}, state, {
+        isFetching: false,
+        items: [
+          ...action.items
+        ]
+      })
     default:
       return state
   }
