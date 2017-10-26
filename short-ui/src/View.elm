@@ -1,7 +1,7 @@
 module View exposing (..)
 
 import Html exposing (..)
-import Models exposing (Model, ShortList)
+import Models exposing (Model, ShortList, Short)
 import Messages exposing (Msg)
 
 
@@ -37,8 +37,9 @@ shortListBody (shorts) =
         (List.map shortListItem shorts)
 
 
-shortListItem : (String) -> Html Msg
-shortListItem (item) =
+shortListItem : (Short) -> Html Msg
+shortListItem (short) =
     tr []
-        [ td [] [ text item ]
+        [ td [] [ text short.id ]
+        , td [] [ text short.href ]
         ]

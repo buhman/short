@@ -4,17 +4,22 @@ import Messages exposing (Msg)
 
 
 type alias Model =
-    { shorts : List String
+    { shorts : ShortList
     }
 
-type alias ShortList = List String
+type alias ShortList = List Short
+type alias Short =
+    { id : String
+    , href : String
+    }
 
 
 init : ( Model, Cmd Msg )
 init =
     let
         model =
-            Model ["foo", "bar"]
+            Model [ Short "foo" "bar"
+                  , Short "spam" "eggs"]
 
         cmds =
             Cmd.none
