@@ -1,50 +1,12 @@
 module Main exposing (..)
 
-import Html exposing (Html, text, div, img)
-import Html.Attributes exposing (src)
+import Html exposing (Html)
+import Models exposing (init, Model)
+import Messages exposing (Msg)
+import Update exposing (update)
+import View exposing (view)
 
 
----- MODEL ----
-
-
-type alias Model =
-    {}
-
-
-init : ( Model, Cmd Msg )
-init =
-    ( {}, Cmd.none )
-
-
-
----- UPDATE ----
-
-
-type Msg
-    = NoOp
-
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    ( model, Cmd.none )
-
-
-
----- VIEW ----
-
-
-view : Model -> Html Msg
-view model =
-    div []
-        [ div [] [ text "It works!" ]
-        ]
-
-
-
----- PROGRAM ----
-
-
-main : Program Never Model Msg
 main =
     Html.program
         { view = view
