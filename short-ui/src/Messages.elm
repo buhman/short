@@ -1,5 +1,8 @@
 module Messages exposing (..)
 
+import Http
+import Models exposing (Short, ContainerModel)
+
 
 type Msg
-    = NoOp
+    = ListAllDone (Result Http.Error (ContainerModel))

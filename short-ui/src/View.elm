@@ -1,7 +1,7 @@
 module View exposing (..)
 
 import Html exposing (..)
-import Models exposing (Model, ShortList, Short)
+import Models exposing (Model, Short)
 import Messages exposing (Msg)
 
 
@@ -9,10 +9,11 @@ view : Model -> Html Msg
 view model =
     div []
         [ shortList model.shorts
+        , text model.error
         ]
 
 
-shortList : (ShortList) -> Html Msg
+shortList : List Short -> Html Msg
 shortList (shorts) =
     table []
         [ shortListHeader
@@ -31,13 +32,13 @@ shortListHeader =
         ]
 
 
-shortListBody : (ShortList) -> Html Msg
+shortListBody : List Short -> Html Msg
 shortListBody (shorts) =
     tbody []
         (List.map shortListItem shorts)
 
 
-shortListItem : (Short) -> Html Msg
+shortListItem : Short -> Html Msg
 shortListItem (short) =
     tr []
         [ td [] [ text short.id ]
